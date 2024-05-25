@@ -22,16 +22,36 @@
  *  6.3 - Key Frames
  *  6.4 - Alerts
  *  6.5 - Buttons
+ *  6.6 - Sounds
  *  7.0 - Media Queries
 */
 
 /* Waiting on global styles here */
 
 /* --root color variables etc go here */
-
+:root {
+  —primary-colour: #ffff00;       /* Yellow */
+  —secondary-color: #ffffff;      /*white*/
+  —btn-background: #a6a6a637;     /*grey*/
+  —accent-color-1: #000000;       /*black*/
+  —accent-color-2: #00ff00;       /*green*/
+  —accent-color-3: #ff0000;       /*red*/
+  —accent-color-3: #ff00ff;      /*purple*/
+}
 /* ================================================== */
 /* #0.0 - Variables ================================= */
 /* ================================================== */
+
+
+:root {
+  -—primary-color: #ffff00;       /* Yellow */
+  -—secondary-color: #ffffff;      /*white*/
+  -—btn-background: #a6a6a637;     /*grey*/
+  -—accent-color-1: #000000;       /*black*/
+  -—accent-color-2: #00ff00;       /*green*/
+  -—accent-color-3: #ff0000;       /*red*/
+  -—accent-color-3: #ff00ff;      /*purple*/
+}
 
 @import url('https://fonts.cdnfonts.com/css/star-wars');
 @import url('https://fonts.cdnfonts.com/css/days-one');
@@ -78,6 +98,16 @@ h2 {
   text-align: center;
 }
 
+.intro-text {
+  background: rgba(191, 177, 177, 0.128);
+  color: #ffd700;
+  font-size: 1.25rem;
+  padding: 3px;
+  border: 1px solid #ffd700;
+  border-radius: 5px;
+  margin: 25px auto;
+}
+
 main {
   flex-grow: 1;
   overflow: hidden;
@@ -102,7 +132,7 @@ header {
   padding: 1.5rem 1rem;
   background-color: #21212179;
   border-bottom: 1px solid #ffffff92;
-  box-shadow: 0 0 5px 3px #fffd9c86;
+  box-shadow: 0 0 5px 3px #ffffff86;
   z-index: 3;
 }
 
@@ -392,6 +422,15 @@ nav ul li.yellow:hover {
   animation-delay: 0.5s;
 }
 
+#game-area h2,
+.countdown {
+  background: rgba(191, 177, 177, 0.128);
+  color: #ffd700;
+  padding: 3px;
+  border: 1px solid #ffd700;
+  border-radius: 5px;
+}
+
 .game-start {
   display: flex;
   flex-direction: column;
@@ -437,88 +476,10 @@ nav ul li.yellow:hover {
   transform: translateX(200%) rotate(35deg);
 }
 
+
 #game-area div{
   text-align: center;
 }
-
-input#answer0,
-input#answer1,
-input#answer2,
-input#answer3  {
-  display: none;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-  width: 200px;
-  padding: 0.5rem;
-  cursor: pointer;
-  border: 1px solid #f1ea10;
-  box-shadow: 0 0 7px 3px;
-}
-
-label:hover {
-  background-color: #ffffff;
-  color: black;
-  box-shadow: 0 0 10px 3px #ffff00;
-}
-
-.countdown {
-  display: flex;
-  color: #ffff00;
-  text-align: center;
-  justify-content: center;
-  font-size: 30px;
-  width: 80px;
-  height: 80px;
-  margin: 10px auto;
-  margin-bottom: 30px;
-  background-position: 50%;
-  border: 2px solid #ffff00;
-  border-radius: 50%;
-}
-
-/* ================================================== */
-/* #4.0 Footer ====================================== */
-/* ================================================== */
-
-footer {
-  width: 100%;
-  font-family: 'Days One', sans-serif;
-  text-align: center;
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  background-color: #212121af;
-  border-top: 1px solid #ffffff92;
-  box-shadow: 0 0 5px 3px #fffd9c86;
-  z-index: 3;
-  overflow: hidden;
-}
-
-/* ==== End of Footer Styles ==== */
-
-/* Trivia start button */
-.start-button {
-  color: #fee908 !important;
-}
-
-.start-button:hover {
-  background-color: #fee908 !important;
-  color: black !important;
-}
-
-/* Game Area */
-
-#game-area {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  margin: auto;
-  color: #ffff00;
-}
-
 
 /* About Page */
 
@@ -535,8 +496,8 @@ footer {
   height: 150px;
   margin: 20px;
   border-radius: 50%;
-  box-shadow: #ffff00 0px 0px 20px 2px;
-  text-shadow: #ffff00 0px 0px 6px, #ffff00 0px 0px 10px;
+  box-shadow: #ffd700 0px 0px 20px 2px;
+  text-shadow: #ffd700 0px 0px 6px, #ffd700 0px 0px 10px;
 }
 
 .about-card {
@@ -555,24 +516,118 @@ footer {
 
 .about-title {
   font-family: "Days One", sans-serif;
-  color:yellow !important;
+  background: rgba(191, 177, 177, 0.128);
+  padding: 3px;
+  border: 1px solid #ffd700;
+  border-radius: 5px;
+  color:#ffd700;
 }
 
 .fa {
   margin: 10px;
-  color: #ffff00;
+  color: #ffd700;
+}
+
+
+input#answer0,
+input#answer1,
+input#answer2,
+input#answer3  {
+  display: none;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem auto;
+  background-color: #313131a6;
+  color: #ffffff;
+  border: 1px solid #ffd700;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 12rem;
+  height: 2.5rem;
+  font-family: 'Days One', sans-serif;
+  font-size: 1rem;
+  z-index: 1;
+  position: relative;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+label::after {
+  content: '';
+  z-index: -1;
+  background-color: #ffffff33;
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transform: translateX(-100%) rotate(35deg);
+  transition: transform 1s ease-in-out;
+}
+
+label:hover {
+    box-shadow: 0 0 9px 2px #ffd700;
+}
+
+label:hover::after {
+  transform: translateX(200%) rotate(35deg);
+}
+
+.countdown {
+  display: flex;
+  color: #ffd700;
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
+  margin-bottom: 30px;
+  background-position: 50%;
+  border: 2px solid #ffd700;
+  border-radius: 50%;
+}
+
+/* ================================================== */
+/* #4.0 Footer ====================================== */
+/* ================================================== */
+
+footer {
+  width: 100%;
+  font-family: 'Days One', sans-serif;
+  text-align: center;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  background-color: #212121af;
+  border-top: 1px solid #ffffff92;
+  box-shadow: 0 0 5px 3px #ffffff92;
+  z-index: 3;
+  overflow: hidden;
+}
+
+/* ==== End of Footer Styles ==== */
+
+/* Game Area */
+
+#game-area {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 1.5rem auto;
+  color: #ffd700;
 }
 
 /* ================================================== */
 /* #5.6 - Error 404 page ============================ */
 /* ================================================== */
-
-/* 404 page */
-
-.baby-yoda-img {
-margin: -50% 0 0 10%;
-width: 90%;
-height: auto;
 
 .error-container {
   display: flex;
@@ -641,7 +696,8 @@ height: auto;
 }
 
 .modal-content {
-  margin: 15% auto;
+  margin: 4rem auto;
+  text-align: center;
   padding: 20px;
   border: 1px solid #888888;
   width: 80%;
@@ -669,6 +725,24 @@ height: auto;
 }
 
 /* ==== End of Timer styles ==== */
+
+
+/* ================================================== */
+/* #6.5 - Variables ================================= */
+/* ================================================== */
+
+#start-game-easy,
+#start-game-medium {
+  margin-bottom: 25px;
+}
+
+/* ==== End of Variables styles ==== */
+
+.sound {
+  /* display: none; */
+  color: #ffffff;
+  margin: 0 0 0 25px;
+}
 
 /* ================================================== */
 /* #7.0 - Media Queries ============================= */

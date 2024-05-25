@@ -20,16 +20,55 @@ const TIMER_DURATION = 10;
 // Declare the shuffled game data iterator
 let shuffledGameDataIterator;
 
+
+// Easy Mode
 // Game start trigger button for youngling
 let startGameEasy = document.getElementById('start-game-easy');
+
+// Change the text of the button when the mouse hovers over it
+startGameEasy.addEventListener('mouseover', function() {
+    startGameEasy.textContent = 'Easy';
+});
+
+// Change the text of the button when the mouse leaves it
+startGameEasy.addEventListener('mouseout', function() {
+    startGameEasy.textContent = 'Youngling';
+});
+
 startGameEasy.addEventListener('click', triviaGameEasy);
 
+// Intermediate Mode
 // Game start trigger button for padawan
 let startGameMedium = document.getElementById('start-game-medium');
+
+// Change the text of the button when the mouse hovers over it
+startGameMedium.addEventListener('mouseover', function() {
+    startGameMedium.textContent = 'Intermediate';
+});
+
+// Change the text of the button when the mouse leaves it
+startGameMedium.addEventListener('mouseout', function() {
+    startGameMedium.textContent = 'Padawan';
+});
+
+// Game start trigger button for Padawan
 startGameMedium.addEventListener('click', triviaGameMedium);
 
+
+// Hard Mode
 // Game start trigger button for Grand Master
 let startGameHard = document.getElementById('start-game-hard');
+
+// Change the text of the button when the mouse hovers over it
+startGameHard.addEventListener('mouseover', function() {
+    startGameHard.textContent = 'Hard';
+});
+
+// Change the text of the button when the mouse leaves it
+startGameHard.addEventListener('mouseout', function() {
+    startGameHard.textContent = 'Grand Master';
+});
+
 startGameHard.addEventListener('click', triviaGameHard);
 
 // Game start youngling
@@ -107,13 +146,13 @@ function triviaGameMedium() {
             displayNextQuestion();
 
             // Create a new Audio object
-            audio = new Audio('./static/sounds/cantina-band.mp3');
-            audio.play();
+            themeAudio = new Audio('./static/sounds/cantina-band.mp3');
+            themeAudio.play();
             
             // Play the audio every 26 seconds
             setInterval(function() {
-                audio.currentTime = 0;
-                audio.play();
+                themeAudio.currentTime = 0;
+                themeAudio.play();
             }, 26000); // 26000 milliseconds = 26 seconds
             
         })
@@ -152,13 +191,13 @@ function triviaGameHard() {
             displayNextQuestion();
 
             // Create a new Audio object
-            audio = new Audio('./static/sounds/cantina-band.mp3');
-            audio.play();
+            themeAudio = new Audio('./static/sounds/cantina-band.mp3');
+            themeAudio.play();
             
             // Play the audio every 26 seconds
             setInterval(function() {
-                audio.currentTime = 0;
-                audio.play();
+                themeAudio.currentTime = 0;
+                themeAudio.play();
             }, 26000); // 26000 milliseconds = 26 seconds
             
         })
@@ -212,7 +251,24 @@ function displayNextQuestion() {
         }
 
         document.getElementById('timer').textContent = null;
-        gameArea.innerHTML = `<h1>You scored ${answersCorrect} out of ${amountOfQuestions} </h1><h2>No more questions</h2>`;
+        gameArea.innerHTML = `<h1>You scored ${answersCorrect} out of ${amountOfQuestions} </h1>
+                              <h2>No more questions</h2>
+                              <div>
+                                  <button id="return-home" href="index.html" type="button" class="game-start" aria-label="button to return to home page">
+                                      Return to Home
+                                  </button>
+                              </div>`
+                              ;
+        let returnHome = document.getElementById('return-home');
+        returnHome.addEventListener('click', function() {
+            audio = new Audio('./static/sounds/roger-roger-sound.mp3');
+            audio.play();
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 1900);
+            
+        });
+
         return;
     }
 
